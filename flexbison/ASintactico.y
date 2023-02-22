@@ -27,141 +27,314 @@
     char TXT[300];
     struct Nodo* NODO;
 }
-%token<TXT> add
-%token<TXT> cat
-%token<TXT> chgrp
-%token<TXT> chmod
-%token<TXT> chown
-%token<TXT> cont
-%token<TXT> copy
-%token<TXT> delete
-%token<TXT> destino
-%token<TXT> edit
-%token<TXT> fdisk
-%token<TXT> fileN
-%token<TXT> find
-%token<TXT> fit
-%token<TXT> fs
-%token<TXT> grp
-%token<TXT> id
-%token<TXT> login
-%token<TXT> logout
-%token<TXT> mkdir
-%token<TXT> mkdisk
-%token<TXT> mkfile
-%token<TXT> mkfs
-%token<TXT> mkusr
-%token<TXT> mount
-%token<TXT> move
-%token<TXT> name
-%token<TXT> pass
-%token<TXT> path
-%token<TXT> pause
-%token<TXT> r
-%token<TXT> remove
-%token<TXT> rename
-%token<TXT> rmdisk
-%token<TXT> rmgrp
-%token<TXT> rmsur
-%token<TXT> size
-%token<TXT> type
-%token<TXT> ugo
-%token<TXT> unit
-%token<TXT> unmount
-%token<TXT> user
-
-%token<TXT> palabra
-
-%token<TXT> igual
-%token<TXT> mayor
-%token<TXT> interrogacion
-%token<TXT> asterisco
-%token<TXT> pathES
-%token<TXT> pathS
-%token<TXT> entero
-
-%token<TXT> bf
-%token<TXT> ff
-%token<TXT> kilo
-%token<TXT> mega
-%token<TXT> wf
+%token<TXT> Add
+%token<TXT> Cat
+%token<TXT> Chgrp
+%token<TXT> Chmod
+%token<TXT> Chown
+%token<TXT> Cont
+%token<TXT> Copy
+%token<TXT> Delete
+%token<TXT> Destino
+%token<TXT> Edit
+%token<TXT> Fdisk
+%token<TXT> FileN
+%token<TXT> Find
+%token<TXT> Fit
+%token<TXT> Fs
+%token<TXT> Full
+%token<TXT> Grp
+%token<TXT> Id
+%token<TXT> Login
+%token<TXT> Logout
+%token<TXT> Mkdir
+%token<TXT> Mkdisk
+%token<TXT> Mkfile
+%token<TXT> Mkfs
+%token<TXT> Mkusr
+%token<TXT> Mount
+%token<TXT> Move
+%token<TXT> Name
+%token<TXT> Pass
+%token<TXT> Path
+%token<TXT> Pause
+%token<TXT> R
+%token<TXT> Remove
+%token<TXT> Rename
+%token<TXT> Rmdisk
+%token<TXT> Rmgrp
+%token<TXT> Rmusr
+%token<TXT> Size
+%token<TXT> Type
+%token<TXT> Ugo
+%token<TXT> Unit
+%token<TXT> Unmount
+%token<TXT> User
 
 
-%type<NODO>
 
+%token<TXT> Dfs
+%token<TXT> Tfs
+%token<TXT> Igual
+%token<TXT> Mayor
+%token<TXT> Interrogacion
+%token<TXT> Asterisco
+%token<TXT> PathES
+%token<TXT> PathS
+%token<TXT> Entero
+%token<TXT> Palabra
+%token<TXT> PalabraC
+%token<TXT> Nnatural
+%token<TXT> Ids
+
+%token<TXT> Byte
+%token<TXT> Bf
+%token<TXT> Extendida
+%token<TXT> Ff
+%token<TXT> Kilo
+%token<TXT> Logica
+%token<TXT> Mega
+%token<TXT> Primaria
+%token<TXT> Wf
+
+%type<NODO> INICIO
+%type<NODO> LCMD
+%type<NODO> COMANDOS
+%type<NODO> PRINCIPALCOM
+%type<NODO> SUBCOMAND
+%type<NODO> SUB
+%type<NODO> CPATH
+%type<NODO> CFIT
+%type<NODO> CUNIT
+%type<NODO> CTYPE
+%type<NODO> CFS
+%type<NODO> CUSER
+%type<NODO> CPASS
 
 
 %start INICIO
 %%
-INICIO:LCMD{}
+INICIO:LCMD{
+    Raiz=$$;
+}
 ;
 
-LCMD:LCMD COMANDOS{}
-|COMANDOS{}
+LCMD:LCMD COMANDOS{
+    Nodo * n =new Nodo("LCMD","","");
+    n->addHijo($1);
+    n->addHijo($2);
+    $$=n;
+}
+|COMANDOS{
+    Nodo * n =new Nodo("LCMD","","");
+    n->addHijo($1);
+    $$=n;
+}
 ;
 
-COMANDOS:PRINCIPALCOM SUBCOMAND{}
+COMANDOS:PRINCIPALCOM SUBCOMAND{
+    Nodo * n =new Nodo("COMANDOS","","");
+    n->addHijo($1);
+    n->addHijo($2);
+    $$=n;
+}
 ;
 
-PRINCIPALCOM:cat{}
-|chgrp{}
-|chmod{}
-|chown{}
-|copy{}
-|edit{}
-|fdisk{}
-|find{}
-|login{}
-|logout{}
-|mkdir{}
-|mkdisk{}
-|mkfile{}
-|mkfs{}
-|mkusr{}
-|mount{}
-|move{}
-|pause{}
-|remove{}
-|rename{}
-|rmdisk{}
-|rmgrp{}
-|rmsur{}
-|unmount{}
+PRINCIPALCOM:Cat{
+
+}
+|Chgrp{
+
+}
+|Chmod{
+
+}
+|Chown{
+
+}
+|Copy{
+
+}
+|Edit{
+
+}
+|Fdisk{
+
+}
+|Find{
+
+}
+|Login{
+
+}
+|Logout{
+
+}
+|Mkdir{
+
+}
+|Mkdisk{
+    Nodo *n=new Nodo("mkdisk",$1,"");
+    $$=n;
+}
+|Mkfile{
+
+}
+|Mkfs{
+
+}
+|Mkusr{
+
+}
+|Mount{
+
+}
+|Move{
+
+}
+|Pause{
+
+}
+|Remove{
+
+}
+|Rename{
+
+}
+|Rmdisk{
+
+}
+|Rmgrp{
+
+}
+|Rmusr{
+
+}
+|Unmount{
+
+}
 ;
 
-SUBCOMAND:SUBCOMAND mayor SUB{}
-|mayor SUB{}
+SUBCOMAND:SUBCOMAND Mayor SUB{
+
+}
+|Mayor SUB{
+
+}
 ;
 
-SUB:add igual{}
-|cont igual pathS{}
-|delete{}
-|destino igual{}
-|fileN igual{}
-|fit igual CFIT{}//
-|fs igual{}
-|grp igual{}
-|id igual{}
-|name igual palabra{}//
-|pass igual{}
-|path igual CPATH{}//
-|r igual{}
-|size igual entero{}//
-|type igual{}
-|ugo igual{}
-|unit igual{}//
-|user igual{}
+SUB:Add Igual Nnatural{
+
+}//
+|Cont Igual PathES{
+
+}//
+|Delete Igual Full{
+
+}//
+|Destino Igual PathS{
+
+}
+|FileN Igual PathES{
+
+}//
+|Fit Igual CFIT{
+    Nodo *n=new Nodo("fit",$3,"");
+    $$=n;
+}//
+|Fs Igual CFS{
+
+}//
+|Grp Igual CPASS{
+
+}//
+|Id Igual Ids{
+
+}//
+|Name Igual Palabra{
+
+}//
+|Pass Igual CPASS{
+
+}//
+|Path Igual CPATH{
+    Nodo *n=new Nodo("path",$3,"");
+    $$=n;
+}//
+|R{
+
+}//
+|Size Igual Entero{
+    Nodo *n=new Nodo("size",$3,"");
+    $$=n;
+}//
+|Type Igual CTYPE{
+
+}//
+|Ugo Igual Entero{
+
+}//
+|Unit Igual CUNIT{
+    Nodo *n=new Nodo("unit",$3,"");
+    $$=n;
+}//
+|User Igual CUSER{
+
+}//
 ;
 
-CPATH:pathES
-|pathS
+CPATH:PathES{
+
+}
+|PathS{
+
+}
 ;
 
-CFIT:bb
-|ff
-|wf
+CFIT:Bf{$$=n;}
+|Ff{$$=n;}
+|Wf{$$=n;}
 ;
 
-CUNIT:kilo
-|mega
+CUNIT:Byte{$$=n;}
+|Kilo{$$=n;}
+|Mega{$$=n;}
+;
+
+CTYPE:Extendida{
+
+}
+|Logica{
+
+}
+|Primaria{
+
+}
+;
+
+CFS:Tfs{
+
+}
+|Dfs{
+
+}
+;
+
+CUSER:Palabra{
+
+}
+|PalabraC{
+
+}
+;
+
+CPASS:Ids{
+
+}
+|PalabraC{
+
+}
+|Palabra{
+
+}
 ;
