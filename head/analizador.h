@@ -8,14 +8,23 @@ using namespace std;
 #include <sys/stat.h>
 // tiempo
 #include <chrono>
-//mis
+// mis
 #include "../cpp/nodo.cpp"
+#include "../cpp/archivo.cpp"
 #include "../flexbison/parser.cpp"
-class Analizador{
-    public:
-        void leerC(char *in);
-        void ejecutar(Nodo *raiz);
-        void recorrer(Nodo *raiz);
-        void ejecutarComando();
+#include "struct.h"
+class Analizador
+{
+private:
+    string strLeerComado = ""; // comando que se esta leyendo en este momento
+
+public:
+    structComandos *strucEjComando = new structComandos;
+    MBR *structMbr=new MBR;
+    void leerC(char *in);
+    void ejecutar(Nodo *raiz);
+    void recorrer(Nodo *raiz);
+    void ejecutarComando(string comando);
+    void vaciarComando();
 };
 #endif // ANALIZADOR_H

@@ -35,6 +35,7 @@ Espacios (" "|"\r"|"\t"|"n")
 "chown"             {yycolum+=yyleng; strcpy(yylval.TXT, yytext); return Chown;}
 "copy"              {yycolum+=yyleng; strcpy(yylval.TXT, yytext); return Copy;}
 "edit"              {yycolum+=yyleng; strcpy(yylval.TXT, yytext); return Edit;}
+"execute"           {yycolum+=yyleng; strcpy(yylval.TXT, yytext); return Execute;}
 "fdisk"             {yycolum+=yyleng; strcpy(yylval.TXT, yytext); return Fdisk;}
 "find"              {yycolum+=yyleng; strcpy(yylval.TXT, yytext); return Find;}
 "login"             {yycolum+=yyleng; strcpy(yylval.TXT, yytext); return Login;}
