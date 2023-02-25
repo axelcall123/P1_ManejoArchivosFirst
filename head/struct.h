@@ -11,6 +11,7 @@ typedef struct
     string path=" ";
     string fit=" ";
     char unit=' ';
+    string name=" ";
     
 } structComandos;
 typedef struct
@@ -19,8 +20,8 @@ typedef struct
     char part_type;
     char part_fit;
     int part_start;
-    int part_s;
-    char part_name[16];
+    int part_s=0;
+    char *part_name[16];
 } Partition;
 typedef struct 
 {
@@ -28,7 +29,10 @@ typedef struct
     time_t mbr_fecha_creacion;
     int mbr_dsk_signature;
     char dsk_fit;
-    vector <Partition> mbr_partition_1;
+    Partition mbr_partition_1;
+    Partition mbr_partition_2;
+    Partition mbr_partition_3;
+    Partition mbr_partition_4;
 } MBR;
 typedef struct{
     char part_status;

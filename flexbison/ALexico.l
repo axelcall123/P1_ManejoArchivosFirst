@@ -15,10 +15,8 @@ Letra [a-zñA-ZÑ]
 LetraE [a-zñ A-ZÑ]
 
 
-PathUE ([/]{Letra}+)+[.]{Letra}+
-PathDE ["]([/]{LetraE}+)+[.]{Letra}+["]
-PathU ([/]{Letra}+)+
-PathD ["]([/]{LetraE}+)+["]
+PathU ([/]({Letra}|{Entero})+)+([.]({Letra}|{Entero})+)?
+PathD ["]([/]({LetraE}|{Entero})+)+([.]({Letra}|{Entero})+)?["]
 Entero [0-9]+
 Palabra {Letra}({Entero}|{Letra}|".")*
 PalabraC ["]{Letra}({Entero}|{LetraE}|".")*["]
@@ -49,6 +47,7 @@ Espacios (" "|"\r"|"\t"|"n")
 "move"              {yycolum+=yyleng; strcpy(yylval.TXT, yytext); return Move;}
 "pause"             {yycolum+=yyleng; strcpy(yylval.TXT, yytext); return Pause;}
 "remove"            {yycolum+=yyleng; strcpy(yylval.TXT, yytext); return Remove;}
+"rep"               {yycolum+=yyleng; strcpy(yylval.TXT, yytext); return Rep;}
 "rename"            {yycolum+=yyleng; strcpy(yylval.TXT, yytext); return Rename;}
 "rmdisk"            {yycolum+=yyleng; strcpy(yylval.TXT, yytext); return Rmdisk;}
 "rmgrp"             {yycolum+=yyleng; strcpy(yylval.TXT, yytext); return Rmgrp;}
@@ -56,8 +55,8 @@ Espacios (" "|"\r"|"\t"|"n")
 "unmount"           {yycolum+=yyleng; strcpy(yylval.TXT, yytext); return Unmount;}
 
 
-">"                 {yycolum+=yyleng; strcpy(yylval.TXT, yytext); return Igual;}
-"="                 {yycolum+=yyleng; strcpy(yylval.TXT, yytext); return Mayor;}
+">"                 {yycolum+=yyleng; strcpy(yylval.TXT, yytext); return Mayor;}
+"="                 {yycolum+=yyleng; strcpy(yylval.TXT, yytext); return Igual;}
 
 "add"               {yycolum+=yyleng; strcpy(yylval.TXT, yytext); return Add;}
 "cont"              {yycolum+=yyleng; strcpy(yylval.TXT, yytext); return Cont;}
@@ -95,7 +94,8 @@ Espacios (" "|"\r"|"\t"|"n")
 "?"                 {yycolum+=yyleng; strcpy(yylval.TXT, yytext); return Interrogacion;}
 "*"                 {yycolum+=yyleng; strcpy(yylval.TXT, yytext); return Asterisco;}
 
-{PathUE}|{PathDE}   {yycolum+=yyleng; strcpy(yylval.TXT, yytext); return PathES;}
+"#$#"               {yycolum+=yyleng; strcpy(yylval.TXT, yytext); return TheEnd;}
+
 {PathU}|{PathD}     {yycolum+=yyleng; strcpy(yylval.TXT, yytext); return PathS;}
 {Entero}            {yycolum+=yyleng; strcpy(yylval.TXT, yytext); return Entero;}
 {Palabra}           {yycolum+=yyleng; strcpy(yylval.TXT, yytext); return Palabra;}
@@ -106,4 +106,6 @@ Espacios (" "|"\r"|"\t"|"n")
 {Espacios}          { /* Nada */}
 .                   {  cout<<"Error lexico, no se esperaba token:   "<<yytext<<yycolum<<yyfila<<endl;}
 %%
+//LEXICOS
 //{yycolum+=yyleng; strcpy(yylval.TEXT, yytext); return asd;}
+//cout<<""<<" L"<<endl;

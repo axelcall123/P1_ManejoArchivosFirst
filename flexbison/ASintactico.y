@@ -62,6 +62,7 @@
 %token<TXT> R
 %token<TXT> Remove
 %token<TXT> Rename
+%token<TXT> Rep
 %token<TXT> Rmdisk
 %token<TXT> Rmgrp
 %token<TXT> Rmusr
@@ -80,7 +81,6 @@
 %token<TXT> Mayor
 %token<TXT> Interrogacion
 %token<TXT> Asterisco
-%token<TXT> PathES
 %token<TXT> PathS
 %token<TXT> Entero
 %token<TXT> Palabra
@@ -97,6 +97,7 @@
 %token<TXT> Mega
 %token<TXT> Primaria
 %token<TXT> Wf
+%token<TXT> TheEnd
 
 %type<NODO> INICIO
 %type<NODO> LCMD
@@ -104,7 +105,7 @@
 %type<NODO> PRINCIPALCOM
 %type<NODO> SUBCOMAND
 %type<NODO> SUB
-%type<NODO> CPATH
+
 %type<NODO> CFIT
 %type<NODO> CUNIT
 %type<NODO> CTYPE
@@ -116,17 +117,24 @@
 %start INICIO
 %%
 INICIO:LCMD{
-    Raiz=$$;
+    cout<<"INICIO"<<" S"<<endl;
+    Nodo * n =new Nodo("FINAL","","");
+    Nodo * a =new Nodo("thend","","");
+    n->addHijo($1);
+    n->addHijo(a);
+    Raiz=n;
 }
 ;
 //////////////////////////////
 LCMD:LCMD COMANDOS{
+    //cout<<"LMCD"<<" S2"<<endl;
     Nodo * n =new Nodo("LCMD","","");
     n->addHijo($1);
     n->addHijo($2);
     $$=n;
 }
 |COMANDOS{
+    //cout<<"LMCD"<<" S1"<<endl;
     Nodo * n =new Nodo("LCMD","","");
     n->addHijo($1);
     $$=n;
@@ -151,12 +159,17 @@ PRINCIPALCOM:Cat{}
     Nodo *n=new Nodo("execute",$1,"");
     $$=n;
 }
-|Fdisk{}
+|Fdisk{
+    //cout<<"fkdisk"<<" S"<<endl;
+    Nodo *n=new Nodo("fdisk",$1,"");
+    $$=n;
+}
 |Find{}
 |Login{}
 |Logout{}
 |Mkdir{}
 |Mkdisk{
+    //cout<<"mkdisk"<<" S"<<endl;
     Nodo *n=new Nodo("mkdisk",$1,"");
     $$=n;
 }
@@ -168,65 +181,83 @@ PRINCIPALCOM:Cat{}
 |Pause{}
 |Remove{}
 |Rename{}
+|Rep{}
 |Rmdisk{}
 |Rmgrp{}
 |Rmusr{}
 |Unmount{}
 ;
 //////////////////////////////
-SUBCOMAND:SUBCOMAND Mayor SUB{}
-|Mayor SUB{}
+SUBCOMAND:SUBCOMAND Mayor SUB{
+    //cout<<"SUMBCOMAND"<<" S2"<<endl;
+    Nodo * n =new Nodo("SUBCOMAND","","");
+    n->addHijo($1);
+    n->addHijo($3);
+    $$=n;
+}
+|Mayor SUB{
+    Nodo * n =new Nodo("SUBCOMAND","","");
+    n->addHijo($2);
+    $$=n;
+}
 ;
 //////////////////////////////
 SUB:Add Igual Nnatural{}//
-|Cont Igual PathES{}//
+|Cont Igual PathS{}//
 |Delete Igual Full{}//
 |Destino Igual PathS{}
-|FileN Igual PathES{}//
+|FileN Igual PathS{}//
 |Fit Igual CFIT{
-    Nodo *n=new Nodo("fit",$3,"");
+    Nodo *n=new Nodo("fit",$3->Token,"");
     $$=n;
 }//
 |Fs Igual CFS{}//
 |Grp Igual CPASS{}//
 |Id Igual Ids{}//
-|Name Igual Palabra{}//
+|Name Igual Palabra{
+    //cout<<"name"<<" S"<<endl;
+    Nodo *n=new Nodo("name",$3,"");
+    $$=n;
+}//
 |Pass Igual CPASS{}//
-|Path Igual CPATH{
+|Path Igual PathS{
+    //cout<<"path"<<" S"<<$3<<endl;
     Nodo *n=new Nodo("path",$3,"");
     $$=n;
 }//
 |R{}//
 |Size Igual Entero{
+    //cout<<"size"<<" S"<<endl;
     Nodo *n=new Nodo("size",$3,"");
     $$=n;
 }//
-|Type Igual CTYPE{}//
+|Type Igual CTYPE{
+    //cout<<"type"<<" S"<<endl;
+    Nodo *n=new Nodo("type",$3->Token,"");
+    $$=n;
+}//
 |Ugo Igual Entero{}//
 |Unit Igual CUNIT{
-    Nodo *n=new Nodo("unit",$3,"");
+    //cout<<"unit"<<" S"<<endl;
+    Nodo *n=new Nodo("unit",$3->Token,"");
     $$=n;
 }//
 |User Igual CUSER{}//
 ;
 //////////////////////////////
-CPATH:PathES{$$=n;}
-|PathS{$$=n;}
+CFIT:Bf{Nodo *n=new Nodo($1); $$=n;}
+|Ff{Nodo *n=new Nodo($1); $$=n;}
+|Wf{Nodo *n=new Nodo($1); $$=n;}
 ;
 //////////////////////////////
-CFIT:Bf{$$=n;}
-|Ff{$$=n;}
-|Wf{$$=n;}
+CUNIT:Byte{Nodo *n=new Nodo($1); $$=n;}
+|Kilo{Nodo *n=new Nodo($1); $$=n;}
+|Mega{Nodo *n=new Nodo($1); $$=n;}
 ;
 //////////////////////////////
-CUNIT:Byte{$$=n;}
-|Kilo{$$=n;}
-|Mega{$$=n;}
-;
-//////////////////////////////
-CTYPE:Extendida{}
-|Logica{}
-|Primaria{}
+CTYPE:Extendida{Nodo *n=new Nodo($1); $$=n;}
+|Logica{Nodo *n=new Nodo($1); $$=n;}
+|Primaria{Nodo *n=new Nodo($1); $$=n;}
 ;
 //////////////////////////////
 CFS:Tfs{}
@@ -241,3 +272,5 @@ CPASS:Ids{}
 |PalabraC{}
 |Palabra{}
 ;
+%%
+//SINTACICOS

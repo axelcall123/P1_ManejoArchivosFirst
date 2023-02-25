@@ -132,46 +132,46 @@ enum yysymbol_kind_t
   YYSYMBOL_Delete = 10,                    /* Delete  */
   YYSYMBOL_Destino = 11,                   /* Destino  */
   YYSYMBOL_Edit = 12,                      /* Edit  */
-  YYSYMBOL_Fdisk = 13,                     /* Fdisk  */
-  YYSYMBOL_FileN = 14,                     /* FileN  */
-  YYSYMBOL_Find = 15,                      /* Find  */
-  YYSYMBOL_Fit = 16,                       /* Fit  */
-  YYSYMBOL_Fs = 17,                        /* Fs  */
-  YYSYMBOL_Full = 18,                      /* Full  */
-  YYSYMBOL_Grp = 19,                       /* Grp  */
-  YYSYMBOL_Id = 20,                        /* Id  */
-  YYSYMBOL_Login = 21,                     /* Login  */
-  YYSYMBOL_Logout = 22,                    /* Logout  */
-  YYSYMBOL_Mkdir = 23,                     /* Mkdir  */
-  YYSYMBOL_Mkdisk = 24,                    /* Mkdisk  */
-  YYSYMBOL_Mkfile = 25,                    /* Mkfile  */
-  YYSYMBOL_Mkfs = 26,                      /* Mkfs  */
-  YYSYMBOL_Mkusr = 27,                     /* Mkusr  */
-  YYSYMBOL_Mount = 28,                     /* Mount  */
-  YYSYMBOL_Move = 29,                      /* Move  */
-  YYSYMBOL_Name = 30,                      /* Name  */
-  YYSYMBOL_Pass = 31,                      /* Pass  */
-  YYSYMBOL_Path = 32,                      /* Path  */
-  YYSYMBOL_Pause = 33,                     /* Pause  */
-  YYSYMBOL_R = 34,                         /* R  */
-  YYSYMBOL_Remove = 35,                    /* Remove  */
-  YYSYMBOL_Rename = 36,                    /* Rename  */
-  YYSYMBOL_Rmdisk = 37,                    /* Rmdisk  */
-  YYSYMBOL_Rmgrp = 38,                     /* Rmgrp  */
-  YYSYMBOL_Rmusr = 39,                     /* Rmusr  */
-  YYSYMBOL_Size = 40,                      /* Size  */
-  YYSYMBOL_Type = 41,                      /* Type  */
-  YYSYMBOL_Ugo = 42,                       /* Ugo  */
-  YYSYMBOL_Unit = 43,                      /* Unit  */
-  YYSYMBOL_Unmount = 44,                   /* Unmount  */
-  YYSYMBOL_User = 45,                      /* User  */
-  YYSYMBOL_Dfs = 46,                       /* Dfs  */
-  YYSYMBOL_Tfs = 47,                       /* Tfs  */
-  YYSYMBOL_Igual = 48,                     /* Igual  */
-  YYSYMBOL_Mayor = 49,                     /* Mayor  */
-  YYSYMBOL_Interrogacion = 50,             /* Interrogacion  */
-  YYSYMBOL_Asterisco = 51,                 /* Asterisco  */
-  YYSYMBOL_PathES = 52,                    /* PathES  */
+  YYSYMBOL_Execute = 13,                   /* Execute  */
+  YYSYMBOL_Fdisk = 14,                     /* Fdisk  */
+  YYSYMBOL_FileN = 15,                     /* FileN  */
+  YYSYMBOL_Find = 16,                      /* Find  */
+  YYSYMBOL_Fit = 17,                       /* Fit  */
+  YYSYMBOL_Fs = 18,                        /* Fs  */
+  YYSYMBOL_Full = 19,                      /* Full  */
+  YYSYMBOL_Grp = 20,                       /* Grp  */
+  YYSYMBOL_Id = 21,                        /* Id  */
+  YYSYMBOL_Login = 22,                     /* Login  */
+  YYSYMBOL_Logout = 23,                    /* Logout  */
+  YYSYMBOL_Mkdir = 24,                     /* Mkdir  */
+  YYSYMBOL_Mkdisk = 25,                    /* Mkdisk  */
+  YYSYMBOL_Mkfile = 26,                    /* Mkfile  */
+  YYSYMBOL_Mkfs = 27,                      /* Mkfs  */
+  YYSYMBOL_Mkusr = 28,                     /* Mkusr  */
+  YYSYMBOL_Mount = 29,                     /* Mount  */
+  YYSYMBOL_Move = 30,                      /* Move  */
+  YYSYMBOL_Name = 31,                      /* Name  */
+  YYSYMBOL_Pass = 32,                      /* Pass  */
+  YYSYMBOL_Path = 33,                      /* Path  */
+  YYSYMBOL_Pause = 34,                     /* Pause  */
+  YYSYMBOL_R = 35,                         /* R  */
+  YYSYMBOL_Remove = 36,                    /* Remove  */
+  YYSYMBOL_Rename = 37,                    /* Rename  */
+  YYSYMBOL_Rmdisk = 38,                    /* Rmdisk  */
+  YYSYMBOL_Rmgrp = 39,                     /* Rmgrp  */
+  YYSYMBOL_Rmusr = 40,                     /* Rmusr  */
+  YYSYMBOL_Size = 41,                      /* Size  */
+  YYSYMBOL_Type = 42,                      /* Type  */
+  YYSYMBOL_Ugo = 43,                       /* Ugo  */
+  YYSYMBOL_Unit = 44,                      /* Unit  */
+  YYSYMBOL_Unmount = 45,                   /* Unmount  */
+  YYSYMBOL_User = 46,                      /* User  */
+  YYSYMBOL_Dfs = 47,                       /* Dfs  */
+  YYSYMBOL_Tfs = 48,                       /* Tfs  */
+  YYSYMBOL_Igual = 49,                     /* Igual  */
+  YYSYMBOL_Mayor = 50,                     /* Mayor  */
+  YYSYMBOL_Interrogacion = 51,             /* Interrogacion  */
+  YYSYMBOL_Asterisco = 52,                 /* Asterisco  */
   YYSYMBOL_PathS = 53,                     /* PathS  */
   YYSYMBOL_Entero = 54,                    /* Entero  */
   YYSYMBOL_Palabra = 55,                   /* Palabra  */
@@ -187,14 +187,14 @@ enum yysymbol_kind_t
   YYSYMBOL_Mega = 65,                      /* Mega  */
   YYSYMBOL_Primaria = 66,                  /* Primaria  */
   YYSYMBOL_Wf = 67,                        /* Wf  */
-  YYSYMBOL_YYACCEPT = 68,                  /* $accept  */
-  YYSYMBOL_INICIO = 69,                    /* INICIO  */
-  YYSYMBOL_LCMD = 70,                      /* LCMD  */
-  YYSYMBOL_COMANDOS = 71,                  /* COMANDOS  */
-  YYSYMBOL_PRINCIPALCOM = 72,              /* PRINCIPALCOM  */
-  YYSYMBOL_SUBCOMAND = 73,                 /* SUBCOMAND  */
-  YYSYMBOL_SUB = 74,                       /* SUB  */
-  YYSYMBOL_CPATH = 75,                     /* CPATH  */
+  YYSYMBOL_TheEnd = 68,                    /* TheEnd  */
+  YYSYMBOL_YYACCEPT = 69,                  /* $accept  */
+  YYSYMBOL_INICIO = 70,                    /* INICIO  */
+  YYSYMBOL_LCMD = 71,                      /* LCMD  */
+  YYSYMBOL_COMANDOS = 72,                  /* COMANDOS  */
+  YYSYMBOL_PRINCIPALCOM = 73,              /* PRINCIPALCOM  */
+  YYSYMBOL_SUBCOMAND = 74,                 /* SUBCOMAND  */
+  YYSYMBOL_SUB = 75,                       /* SUB  */
   YYSYMBOL_CFIT = 76,                      /* CFIT  */
   YYSYMBOL_CUNIT = 77,                     /* CUNIT  */
   YYSYMBOL_CTYPE = 78,                     /* CTYPE  */
@@ -526,21 +526,21 @@ union yyalloc
 #endif /* !YYCOPY_NEEDED */
 
 /* YYFINAL -- State number of the termination state.  */
-#define YYFINAL  29
+#define YYFINAL  30
 /* YYLAST -- Last index in YYTABLE.  */
-#define YYLAST   94
+#define YYLAST   91
 
 /* YYNTOKENS -- Number of terminals.  */
-#define YYNTOKENS  68
+#define YYNTOKENS  69
 /* YYNNTS -- Number of nonterminals.  */
-#define YYNNTS  14
+#define YYNNTS  13
 /* YYNRULES -- Number of rules.  */
-#define YYNRULES  67
+#define YYNRULES  66
 /* YYNSTATES -- Number of states.  */
-#define YYNSTATES  106
+#define YYNSTATES  105
 
 /* YYMAXUTOK -- Last valid token kind.  */
-#define YYMAXUTOK   322
+#define YYMAXUTOK   323
 
 
 /* YYTRANSLATE(TOKEN-NUM) -- Symbol number corresponding to TOKEN-NUM
@@ -586,20 +586,20 @@ static const yytype_int8 yytranslate[] =
       35,    36,    37,    38,    39,    40,    41,    42,    43,    44,
       45,    46,    47,    48,    49,    50,    51,    52,    53,    54,
       55,    56,    57,    58,    59,    60,    61,    62,    63,    64,
-      65,    66,    67
+      65,    66,    67,    68
 };
 
 #if YYDEBUG
 /* YYRLINE[YYN] -- Source line where rule number YYN was defined.  */
 static const yytype_int16 yyrline[] =
 {
-       0,   117,   117,   122,   128,   135,   143,   146,   149,   152,
-     155,   158,   161,   164,   167,   170,   173,   176,   180,   183,
-     186,   189,   192,   195,   198,   201,   204,   207,   210,   213,
-     218,   221,   226,   229,   232,   235,   238,   241,   244,   247,
-     250,   253,   256,   259,   262,   265,   268,   271,   274,   277,
-     282,   285,   290,   293,   296,   301,   304,   307,   312,   315,
-     318,   323,   326,   331,   334,   339,   342,   345
+       0,   118,   118,   128,   135,   143,   151,   152,   153,   154,
+     155,   156,   157,   161,   166,   167,   168,   169,   170,   175,
+     176,   177,   178,   179,   180,   181,   182,   183,   184,   185,
+     186,   189,   196,   203,   204,   205,   206,   207,   208,   212,
+     213,   214,   215,   220,   221,   226,   227,   232,   237,   238,
+     243,   246,   247,   248,   251,   252,   253,   256,   257,   258,
+     261,   262,   265,   266,   269,   270,   271
 };
 #endif
 
@@ -616,16 +616,16 @@ static const char *yysymbol_name (yysymbol_kind_t yysymbol) YY_ATTRIBUTE_UNUSED;
 static const char *const yytname[] =
 {
   "\"end of file\"", "error", "\"invalid token\"", "Add", "Cat", "Chgrp",
-  "Chmod", "Chown", "Cont", "Copy", "Delete", "Destino", "Edit", "Fdisk",
-  "FileN", "Find", "Fit", "Fs", "Full", "Grp", "Id", "Login", "Logout",
-  "Mkdir", "Mkdisk", "Mkfile", "Mkfs", "Mkusr", "Mount", "Move", "Name",
-  "Pass", "Path", "Pause", "R", "Remove", "Rename", "Rmdisk", "Rmgrp",
-  "Rmusr", "Size", "Type", "Ugo", "Unit", "Unmount", "User", "Dfs", "Tfs",
-  "Igual", "Mayor", "Interrogacion", "Asterisco", "PathES", "PathS",
+  "Chmod", "Chown", "Cont", "Copy", "Delete", "Destino", "Edit", "Execute",
+  "Fdisk", "FileN", "Find", "Fit", "Fs", "Full", "Grp", "Id", "Login",
+  "Logout", "Mkdir", "Mkdisk", "Mkfile", "Mkfs", "Mkusr", "Mount", "Move",
+  "Name", "Pass", "Path", "Pause", "R", "Remove", "Rename", "Rmdisk",
+  "Rmgrp", "Rmusr", "Size", "Type", "Ugo", "Unit", "Unmount", "User",
+  "Dfs", "Tfs", "Igual", "Mayor", "Interrogacion", "Asterisco", "PathS",
   "Entero", "Palabra", "PalabraC", "Nnatural", "Ids", "Byte", "Bf",
-  "Extendida", "Ff", "Kilo", "Logica", "Mega", "Primaria", "Wf", "$accept",
-  "INICIO", "LCMD", "COMANDOS", "PRINCIPALCOM", "SUBCOMAND", "SUB",
-  "CPATH", "CFIT", "CUNIT", "CTYPE", "CFS", "CUSER", "CPASS", YY_NULLPTR
+  "Extendida", "Ff", "Kilo", "Logica", "Mega", "Primaria", "Wf", "TheEnd",
+  "$accept", "INICIO", "LCMD", "COMANDOS", "PRINCIPALCOM", "SUBCOMAND",
+  "SUB", "CFIT", "CUNIT", "CTYPE", "CFS", "CUSER", "CPASS", YY_NULLPTR
 };
 
 static const char *
@@ -649,17 +649,17 @@ yysymbol_name (yysymbol_kind_t yysymbol)
    STATE-NUM.  */
 static const yytype_int8 yypact[] =
 {
-      39,   -59,   -59,   -59,   -59,   -59,   -59,   -59,   -59,   -59,
+      40,   -59,   -59,   -59,   -59,   -59,   -59,   -59,   -59,   -59,
      -59,   -59,   -59,   -59,   -59,   -59,   -59,   -59,   -59,   -59,
-     -59,   -59,   -59,   -59,   -59,     1,    39,   -59,   -30,   -59,
-     -59,    -3,   -26,   -45,   -18,   -14,   -13,   -12,    -7,    -1,
-       5,     7,     8,     9,    10,   -59,    11,    21,    22,    23,
-      25,   -59,    -3,    24,    27,    62,    29,    32,   -58,   -21,
-     -34,    28,    30,   -34,   -20,    33,   -46,    34,   -53,    -6,
+     -59,   -59,   -59,   -59,   -59,   -59,     1,    40,   -59,   -47,
+     -59,   -59,    -3,   -44,   -30,   -26,   -24,   -22,   -18,   -12,
+      -7,    -1,     2,     6,     8,     9,   -59,    10,    11,    12,
+      22,    23,   -59,    -3,    16,    28,    31,    29,    30,   -58,
+     -14,   -45,    17,    32,   -45,    33,    34,   -40,    35,   -43,
+     -20,   -59,   -59,   -59,   -59,   -59,   -59,   -59,   -59,   -59,
      -59,   -59,   -59,   -59,   -59,   -59,   -59,   -59,   -59,   -59,
      -59,   -59,   -59,   -59,   -59,   -59,   -59,   -59,   -59,   -59,
-     -59,   -59,   -59,   -59,   -59,   -59,   -59,   -59,   -59,   -59,
-     -59,   -59,   -59,   -59,   -59,   -59
+     -59,   -59,   -59,   -59,   -59
 };
 
 /* YYDEFACT[STATE-NUM] -- Default reduction number in state STATE-NUM.
@@ -669,29 +669,29 @@ static const yytype_int8 yydefact[] =
 {
        0,     6,     7,     8,     9,    10,    11,    12,    13,    14,
       15,    16,    17,    18,    19,    20,    21,    22,    23,    24,
-      25,    26,    27,    28,    29,     0,     2,     4,     0,     1,
-       3,     0,     5,     0,     0,     0,     0,     0,     0,     0,
-       0,     0,     0,     0,     0,    44,     0,     0,     0,     0,
-       0,    31,     0,     0,     0,     0,     0,     0,     0,     0,
+      25,    26,    27,    28,    29,    30,     0,     2,     4,     0,
+       1,     3,     0,     5,     0,     0,     0,     0,     0,     0,
+       0,     0,     0,     0,     0,     0,    45,     0,     0,     0,
+       0,     0,    32,     0,     0,     0,     0,     0,     0,     0,
        0,     0,     0,     0,     0,     0,     0,     0,     0,     0,
-      30,    32,    33,    34,    35,    36,    52,    53,    54,    37,
-      62,    61,    38,    67,    66,    65,    39,    40,    41,    42,
-      50,    51,    43,    45,    58,    59,    60,    46,    47,    55,
-      56,    57,    48,    63,    64,    49
+       0,    31,    33,    34,    35,    36,    37,    51,    52,    53,
+      38,    61,    60,    39,    66,    65,    64,    40,    41,    42,
+      43,    44,    46,    57,    58,    59,    47,    48,    54,    55,
+      56,    49,    62,    63,    50
 };
 
 /* YYPGOTO[NTERM-NUM].  */
 static const yytype_int8 yypgoto[] =
 {
-     -59,   -59,   -59,    63,   -59,   -59,    38,   -59,   -59,   -59,
-     -59,   -59,   -59,    31
+     -59,   -59,   -59,    57,   -59,   -59,    37,   -59,   -59,   -59,
+     -59,   -59,    27
 };
 
 /* YYDEFGOTO[NTERM-NUM].  */
 static const yytype_int8 yydefgoto[] =
 {
-       0,    25,    26,    27,    28,    32,    51,    92,    79,   102,
-      97,    82,   105,    86
+       0,    26,    27,    28,    29,    33,    52,    80,   101,    96,
+      83,   104,    87
 };
 
 /* YYTABLE[YYPACT[STATE-NUM]] -- What to do in state STATE-NUM.  If
@@ -699,59 +699,59 @@ static const yytype_int8 yydefgoto[] =
    number is the opposite.  If YYTABLE_NINF, syntax error.  */
 static const yytype_int8 yytable[] =
 {
-      33,    29,    76,    53,    77,    34,    99,    35,    36,    78,
-     100,    37,   101,    38,    39,    94,    40,    41,    95,    31,
-      96,    83,    84,    52,    85,    80,    81,    42,    43,    44,
-      54,    45,    90,    91,    55,    56,    57,    46,    47,    48,
-      49,    58,    50,     1,     2,     3,     4,    59,     5,   103,
-     104,     6,     7,    60,     8,    61,    62,    63,    64,    65,
-       9,    10,    11,    12,    13,    14,    15,    16,    17,    66,
-      67,    68,    18,    69,    19,    20,    21,    22,    23,    72,
-      73,    71,    74,    24,    75,    88,    87,    93,    98,    30,
-      70,     0,     0,     0,    89
+      34,    30,    77,    32,    78,    35,    53,    36,    37,    79,
+      84,    85,    38,    86,    39,    40,    98,    41,    42,    54,
+      99,    93,   100,    55,    94,    56,    95,    57,    43,    44,
+      45,    58,    46,    81,    82,   102,   103,    59,    47,    48,
+      49,    50,    60,    51,     1,     2,     3,     4,    61,     5,
+      74,    62,     6,     7,     8,    63,     9,    64,    65,    66,
+      67,    68,    10,    11,    12,    13,    14,    15,    16,    17,
+      18,    69,    70,    72,    19,    88,    20,    21,    22,    23,
+      24,    73,    75,    76,    31,    25,    91,    89,    92,    97,
+      71,    90
 };
 
 static const yytype_int8 yycheck[] =
 {
-       3,     0,    60,    48,    62,     8,    59,    10,    11,    67,
-      63,    14,    65,    16,    17,    61,    19,    20,    64,    49,
-      66,    55,    56,    49,    58,    46,    47,    30,    31,    32,
-      48,    34,    52,    53,    48,    48,    48,    40,    41,    42,
-      43,    48,    45,     4,     5,     6,     7,    48,     9,    55,
-      56,    12,    13,    48,    15,    48,    48,    48,    48,    48,
-      21,    22,    23,    24,    25,    26,    27,    28,    29,    48,
-      48,    48,    33,    48,    35,    36,    37,    38,    39,    52,
-      18,    57,    53,    44,    52,    55,    58,    54,    54,    26,
-      52,    -1,    -1,    -1,    63
+       3,     0,    60,    50,    62,     8,    50,    10,    11,    67,
+      55,    56,    15,    58,    17,    18,    59,    20,    21,    49,
+      63,    61,    65,    49,    64,    49,    66,    49,    31,    32,
+      33,    49,    35,    47,    48,    55,    56,    49,    41,    42,
+      43,    44,    49,    46,     4,     5,     6,     7,    49,     9,
+      19,    49,    12,    13,    14,    49,    16,    49,    49,    49,
+      49,    49,    22,    23,    24,    25,    26,    27,    28,    29,
+      30,    49,    49,    57,    34,    58,    36,    37,    38,    39,
+      40,    53,    53,    53,    27,    45,    53,    55,    54,    54,
+      53,    64
 };
 
 /* YYSTOS[STATE-NUM] -- The symbol kind of the accessing symbol of
    state STATE-NUM.  */
 static const yytype_int8 yystos[] =
 {
-       0,     4,     5,     6,     7,     9,    12,    13,    15,    21,
-      22,    23,    24,    25,    26,    27,    28,    29,    33,    35,
-      36,    37,    38,    39,    44,    69,    70,    71,    72,     0,
-      71,    49,    73,     3,     8,    10,    11,    14,    16,    17,
-      19,    20,    30,    31,    32,    34,    40,    41,    42,    43,
-      45,    74,    49,    48,    48,    48,    48,    48,    48,    48,
-      48,    48,    48,    48,    48,    48,    48,    48,    48,    48,
-      74,    57,    52,    18,    53,    52,    60,    62,    67,    76,
-      46,    47,    79,    55,    56,    58,    81,    58,    55,    81,
-      52,    53,    75,    54,    61,    64,    66,    78,    54,    59,
-      63,    65,    77,    55,    56,    80
+       0,     4,     5,     6,     7,     9,    12,    13,    14,    16,
+      22,    23,    24,    25,    26,    27,    28,    29,    30,    34,
+      36,    37,    38,    39,    40,    45,    70,    71,    72,    73,
+       0,    72,    50,    74,     3,     8,    10,    11,    15,    17,
+      18,    20,    21,    31,    32,    33,    35,    41,    42,    43,
+      44,    46,    75,    50,    49,    49,    49,    49,    49,    49,
+      49,    49,    49,    49,    49,    49,    49,    49,    49,    49,
+      49,    75,    57,    53,    19,    53,    53,    60,    62,    67,
+      76,    47,    48,    79,    55,    56,    58,    81,    58,    55,
+      81,    53,    54,    61,    64,    66,    78,    54,    59,    63,
+      65,    77,    55,    56,    80
 };
 
 /* YYR1[RULE-NUM] -- Symbol kind of the left-hand side of rule RULE-NUM.  */
 static const yytype_int8 yyr1[] =
 {
-       0,    68,    69,    70,    70,    71,    72,    72,    72,    72,
-      72,    72,    72,    72,    72,    72,    72,    72,    72,    72,
-      72,    72,    72,    72,    72,    72,    72,    72,    72,    72,
-      73,    73,    74,    74,    74,    74,    74,    74,    74,    74,
-      74,    74,    74,    74,    74,    74,    74,    74,    74,    74,
-      75,    75,    76,    76,    76,    77,    77,    77,    78,    78,
-      78,    79,    79,    80,    80,    81,    81,    81
+       0,    69,    70,    71,    71,    72,    73,    73,    73,    73,
+      73,    73,    73,    73,    73,    73,    73,    73,    73,    73,
+      73,    73,    73,    73,    73,    73,    73,    73,    73,    73,
+      73,    74,    74,    75,    75,    75,    75,    75,    75,    75,
+      75,    75,    75,    75,    75,    75,    75,    75,    75,    75,
+      75,    76,    76,    76,    77,    77,    77,    78,    78,    78,
+      79,    79,    80,    80,    81,    81,    81
 };
 
 /* YYR2[RULE-NUM] -- Number of symbols on the right-hand side of rule RULE-NUM.  */
@@ -760,10 +760,10 @@ static const yytype_int8 yyr2[] =
        0,     2,     1,     2,     1,     2,     1,     1,     1,     1,
        1,     1,     1,     1,     1,     1,     1,     1,     1,     1,
        1,     1,     1,     1,     1,     1,     1,     1,     1,     1,
-       3,     2,     3,     3,     3,     3,     3,     3,     3,     3,
-       3,     3,     3,     3,     1,     3,     3,     3,     3,     3,
-       1,     1,     1,     1,     1,     1,     1,     1,     1,     1,
-       1,     1,     1,     1,     1,     1,     1,     1
+       1,     3,     2,     3,     3,     3,     3,     3,     3,     3,
+       3,     3,     3,     3,     3,     1,     3,     3,     3,     3,
+       3,     1,     1,     1,     1,     1,     1,     1,     1,     1,
+       1,     1,     1,     1,     1,     1,     1
 };
 
 
@@ -1497,544 +1497,464 @@ yyreduce:
   switch (yyn)
     {
   case 2: /* INICIO: LCMD  */
-#line 117 "ASintactico.y"
+#line 118 "ASintactico.y"
            {
-    Raiz=(yyval.NODO);
+    cout<<"INICIO"<<" S"<<endl;
+    Nodo * n =new Nodo("FINAL","","");
+    Nodo * a =new Nodo("thend","","");
+    n->addHijo((yyvsp[0].NODO));
+    n->addHijo(a);
+    Raiz=n;
 }
-#line 1505 "parser.cpp"
+#line 1510 "parser.cpp"
     break;
 
   case 3: /* LCMD: LCMD COMANDOS  */
-#line 122 "ASintactico.y"
+#line 128 "ASintactico.y"
                   {
+    //cout<<"LMCD"<<" S2"<<endl;
     Nodo * n =new Nodo("LCMD","","");
     n->addHijo((yyvsp[-1].NODO));
     n->addHijo((yyvsp[0].NODO));
     (yyval.NODO)=n;
 }
-#line 1516 "parser.cpp"
+#line 1522 "parser.cpp"
     break;
 
   case 4: /* LCMD: COMANDOS  */
-#line 128 "ASintactico.y"
+#line 135 "ASintactico.y"
          {
+    //cout<<"LMCD"<<" S1"<<endl;
     Nodo * n =new Nodo("LCMD","","");
     n->addHijo((yyvsp[0].NODO));
     (yyval.NODO)=n;
 }
-#line 1526 "parser.cpp"
+#line 1533 "parser.cpp"
     break;
 
   case 5: /* COMANDOS: PRINCIPALCOM SUBCOMAND  */
-#line 135 "ASintactico.y"
+#line 143 "ASintactico.y"
                                {
     Nodo * n =new Nodo("COMANDOS","","");
     n->addHijo((yyvsp[-1].NODO));
     n->addHijo((yyvsp[0].NODO));
     (yyval.NODO)=n;
 }
-#line 1537 "parser.cpp"
+#line 1544 "parser.cpp"
     break;
 
   case 6: /* PRINCIPALCOM: Cat  */
-#line 143 "ASintactico.y"
-                {
-
-}
-#line 1545 "parser.cpp"
+#line 151 "ASintactico.y"
+                {}
+#line 1550 "parser.cpp"
     break;
 
   case 7: /* PRINCIPALCOM: Chgrp  */
-#line 146 "ASintactico.y"
-      {
-
-}
-#line 1553 "parser.cpp"
+#line 152 "ASintactico.y"
+      {}
+#line 1556 "parser.cpp"
     break;
 
   case 8: /* PRINCIPALCOM: Chmod  */
-#line 149 "ASintactico.y"
-      {
-
-}
-#line 1561 "parser.cpp"
+#line 153 "ASintactico.y"
+      {}
+#line 1562 "parser.cpp"
     break;
 
   case 9: /* PRINCIPALCOM: Chown  */
-#line 152 "ASintactico.y"
-      {
-
-}
-#line 1569 "parser.cpp"
+#line 154 "ASintactico.y"
+      {}
+#line 1568 "parser.cpp"
     break;
 
   case 10: /* PRINCIPALCOM: Copy  */
 #line 155 "ASintactico.y"
-     {
-
-}
-#line 1577 "parser.cpp"
+     {}
+#line 1574 "parser.cpp"
     break;
 
   case 11: /* PRINCIPALCOM: Edit  */
-#line 158 "ASintactico.y"
-     {
-
-}
-#line 1585 "parser.cpp"
+#line 156 "ASintactico.y"
+     {}
+#line 1580 "parser.cpp"
     break;
 
-  case 12: /* PRINCIPALCOM: Fdisk  */
+  case 12: /* PRINCIPALCOM: Execute  */
+#line 157 "ASintactico.y"
+        {
+    Nodo *n=new Nodo("execute",(yyvsp[0].TXT),"");
+    (yyval.NODO)=n;
+}
+#line 1589 "parser.cpp"
+    break;
+
+  case 13: /* PRINCIPALCOM: Fdisk  */
 #line 161 "ASintactico.y"
       {
-
+    //cout<<"fkdisk"<<" S"<<endl;
+    Nodo *n=new Nodo("fdisk",(yyvsp[0].TXT),"");
+    (yyval.NODO)=n;
 }
-#line 1593 "parser.cpp"
+#line 1599 "parser.cpp"
     break;
 
-  case 13: /* PRINCIPALCOM: Find  */
-#line 164 "ASintactico.y"
-     {
-
-}
-#line 1601 "parser.cpp"
+  case 14: /* PRINCIPALCOM: Find  */
+#line 166 "ASintactico.y"
+     {}
+#line 1605 "parser.cpp"
     break;
 
-  case 14: /* PRINCIPALCOM: Login  */
+  case 15: /* PRINCIPALCOM: Login  */
 #line 167 "ASintactico.y"
-      {
-
-}
-#line 1609 "parser.cpp"
+      {}
+#line 1611 "parser.cpp"
     break;
 
-  case 15: /* PRINCIPALCOM: Logout  */
-#line 170 "ASintactico.y"
-       {
-
-}
+  case 16: /* PRINCIPALCOM: Logout  */
+#line 168 "ASintactico.y"
+       {}
 #line 1617 "parser.cpp"
     break;
 
-  case 16: /* PRINCIPALCOM: Mkdir  */
-#line 173 "ASintactico.y"
-      {
-
-}
-#line 1625 "parser.cpp"
+  case 17: /* PRINCIPALCOM: Mkdir  */
+#line 169 "ASintactico.y"
+      {}
+#line 1623 "parser.cpp"
     break;
 
-  case 17: /* PRINCIPALCOM: Mkdisk  */
-#line 176 "ASintactico.y"
+  case 18: /* PRINCIPALCOM: Mkdisk  */
+#line 170 "ASintactico.y"
        {
+    //cout<<"mkdisk"<<" S"<<endl;
     Nodo *n=new Nodo("mkdisk",(yyvsp[0].TXT),"");
     (yyval.NODO)=n;
 }
-#line 1634 "parser.cpp"
+#line 1633 "parser.cpp"
     break;
 
-  case 18: /* PRINCIPALCOM: Mkfile  */
+  case 19: /* PRINCIPALCOM: Mkfile  */
+#line 175 "ASintactico.y"
+       {}
+#line 1639 "parser.cpp"
+    break;
+
+  case 20: /* PRINCIPALCOM: Mkfs  */
+#line 176 "ASintactico.y"
+     {}
+#line 1645 "parser.cpp"
+    break;
+
+  case 21: /* PRINCIPALCOM: Mkusr  */
+#line 177 "ASintactico.y"
+      {}
+#line 1651 "parser.cpp"
+    break;
+
+  case 22: /* PRINCIPALCOM: Mount  */
+#line 178 "ASintactico.y"
+      {}
+#line 1657 "parser.cpp"
+    break;
+
+  case 23: /* PRINCIPALCOM: Move  */
+#line 179 "ASintactico.y"
+     {}
+#line 1663 "parser.cpp"
+    break;
+
+  case 24: /* PRINCIPALCOM: Pause  */
 #line 180 "ASintactico.y"
-       {
-
-}
-#line 1642 "parser.cpp"
+      {}
+#line 1669 "parser.cpp"
     break;
 
-  case 19: /* PRINCIPALCOM: Mkfs  */
+  case 25: /* PRINCIPALCOM: Remove  */
+#line 181 "ASintactico.y"
+       {}
+#line 1675 "parser.cpp"
+    break;
+
+  case 26: /* PRINCIPALCOM: Rename  */
+#line 182 "ASintactico.y"
+       {}
+#line 1681 "parser.cpp"
+    break;
+
+  case 27: /* PRINCIPALCOM: Rmdisk  */
 #line 183 "ASintactico.y"
-     {
-
-}
-#line 1650 "parser.cpp"
+       {}
+#line 1687 "parser.cpp"
     break;
 
-  case 20: /* PRINCIPALCOM: Mkusr  */
+  case 28: /* PRINCIPALCOM: Rmgrp  */
+#line 184 "ASintactico.y"
+      {}
+#line 1693 "parser.cpp"
+    break;
+
+  case 29: /* PRINCIPALCOM: Rmusr  */
+#line 185 "ASintactico.y"
+      {}
+#line 1699 "parser.cpp"
+    break;
+
+  case 30: /* PRINCIPALCOM: Unmount  */
 #line 186 "ASintactico.y"
-      {
-
-}
-#line 1658 "parser.cpp"
+        {}
+#line 1705 "parser.cpp"
     break;
 
-  case 21: /* PRINCIPALCOM: Mount  */
+  case 31: /* SUBCOMAND: SUBCOMAND Mayor SUB  */
 #line 189 "ASintactico.y"
-      {
-
-}
-#line 1666 "parser.cpp"
-    break;
-
-  case 22: /* PRINCIPALCOM: Move  */
-#line 192 "ASintactico.y"
-     {
-
-}
-#line 1674 "parser.cpp"
-    break;
-
-  case 23: /* PRINCIPALCOM: Pause  */
-#line 195 "ASintactico.y"
-      {
-
-}
-#line 1682 "parser.cpp"
-    break;
-
-  case 24: /* PRINCIPALCOM: Remove  */
-#line 198 "ASintactico.y"
-       {
-
-}
-#line 1690 "parser.cpp"
-    break;
-
-  case 25: /* PRINCIPALCOM: Rename  */
-#line 201 "ASintactico.y"
-       {
-
-}
-#line 1698 "parser.cpp"
-    break;
-
-  case 26: /* PRINCIPALCOM: Rmdisk  */
-#line 204 "ASintactico.y"
-       {
-
-}
-#line 1706 "parser.cpp"
-    break;
-
-  case 27: /* PRINCIPALCOM: Rmgrp  */
-#line 207 "ASintactico.y"
-      {
-
-}
-#line 1714 "parser.cpp"
-    break;
-
-  case 28: /* PRINCIPALCOM: Rmusr  */
-#line 210 "ASintactico.y"
-      {
-
-}
-#line 1722 "parser.cpp"
-    break;
-
-  case 29: /* PRINCIPALCOM: Unmount  */
-#line 213 "ASintactico.y"
-        {
-
-}
-#line 1730 "parser.cpp"
-    break;
-
-  case 30: /* SUBCOMAND: SUBCOMAND Mayor SUB  */
-#line 218 "ASintactico.y"
                              {
-
+    //cout<<"SUMBCOMAND"<<" S2"<<endl;
+    Nodo * n =new Nodo("SUBCOMAND","","");
+    n->addHijo((yyvsp[-2].NODO));
+    n->addHijo((yyvsp[0].NODO));
+    (yyval.NODO)=n;
 }
-#line 1738 "parser.cpp"
+#line 1717 "parser.cpp"
     break;
 
-  case 31: /* SUBCOMAND: Mayor SUB  */
-#line 221 "ASintactico.y"
+  case 32: /* SUBCOMAND: Mayor SUB  */
+#line 196 "ASintactico.y"
           {
-
+    Nodo * n =new Nodo("SUBCOMAND","","");
+    n->addHijo((yyvsp[0].NODO));
+    (yyval.NODO)=n;
 }
-#line 1746 "parser.cpp"
+#line 1727 "parser.cpp"
     break;
 
-  case 32: /* SUB: Add Igual Nnatural  */
-#line 226 "ASintactico.y"
-                      {
-
-}
-#line 1754 "parser.cpp"
+  case 33: /* SUB: Add Igual Nnatural  */
+#line 203 "ASintactico.y"
+                      {}
+#line 1733 "parser.cpp"
     break;
 
-  case 33: /* SUB: Cont Igual PathES  */
-#line 229 "ASintactico.y"
-                  {
-
-}
-#line 1762 "parser.cpp"
+  case 34: /* SUB: Cont Igual PathS  */
+#line 204 "ASintactico.y"
+                 {}
+#line 1739 "parser.cpp"
     break;
 
-  case 34: /* SUB: Delete Igual Full  */
-#line 232 "ASintactico.y"
-                  {
-
-}
-#line 1770 "parser.cpp"
+  case 35: /* SUB: Delete Igual Full  */
+#line 205 "ASintactico.y"
+                  {}
+#line 1745 "parser.cpp"
     break;
 
-  case 35: /* SUB: Destino Igual PathS  */
-#line 235 "ASintactico.y"
-                    {
+  case 36: /* SUB: Destino Igual PathS  */
+#line 206 "ASintactico.y"
+                    {}
+#line 1751 "parser.cpp"
+    break;
 
+  case 37: /* SUB: FileN Igual PathS  */
+#line 207 "ASintactico.y"
+                  {}
+#line 1757 "parser.cpp"
+    break;
+
+  case 38: /* SUB: Fit Igual CFIT  */
+#line 208 "ASintactico.y"
+               {
+    Nodo *n=new Nodo("fit",(yyvsp[0].NODO)->Token,"");
+    (yyval.NODO)=n;
 }
+#line 1766 "parser.cpp"
+    break;
+
+  case 39: /* SUB: Fs Igual CFS  */
+#line 212 "ASintactico.y"
+             {}
+#line 1772 "parser.cpp"
+    break;
+
+  case 40: /* SUB: Grp Igual CPASS  */
+#line 213 "ASintactico.y"
+                {}
 #line 1778 "parser.cpp"
     break;
 
-  case 36: /* SUB: FileN Igual PathES  */
-#line 238 "ASintactico.y"
-                   {
-
-}
-#line 1786 "parser.cpp"
+  case 41: /* SUB: Id Igual Ids  */
+#line 214 "ASintactico.y"
+             {}
+#line 1784 "parser.cpp"
     break;
 
-  case 37: /* SUB: Fit Igual CFIT  */
-#line 241 "ASintactico.y"
-               {
-
+  case 42: /* SUB: Name Igual Palabra  */
+#line 215 "ASintactico.y"
+                   {
+    //cout<<"name"<<" S"<<endl;
+    Nodo *n=new Nodo("name",(yyvsp[0].TXT),"");
+    (yyval.NODO)=n;
 }
 #line 1794 "parser.cpp"
     break;
 
-  case 38: /* SUB: Fs Igual CFS  */
-#line 244 "ASintactico.y"
-             {
-
-}
-#line 1802 "parser.cpp"
+  case 43: /* SUB: Pass Igual CPASS  */
+#line 220 "ASintactico.y"
+                 {}
+#line 1800 "parser.cpp"
     break;
 
-  case 39: /* SUB: Grp Igual CPASS  */
-#line 247 "ASintactico.y"
-                {
-
+  case 44: /* SUB: Path Igual PathS  */
+#line 221 "ASintactico.y"
+                 {
+    //cout<<"path"<<" S"<<$3<<endl;
+    Nodo *n=new Nodo("path",(yyvsp[0].TXT),"");
+    (yyval.NODO)=n;
 }
 #line 1810 "parser.cpp"
     break;
 
-  case 40: /* SUB: Id Igual Ids  */
-#line 250 "ASintactico.y"
-             {
-
-}
-#line 1818 "parser.cpp"
+  case 45: /* SUB: R  */
+#line 226 "ASintactico.y"
+  {}
+#line 1816 "parser.cpp"
     break;
 
-  case 41: /* SUB: Name Igual Palabra  */
-#line 253 "ASintactico.y"
-                   {
-
+  case 46: /* SUB: Size Igual Entero  */
+#line 227 "ASintactico.y"
+                  {
+    //cout<<"size"<<" S"<<endl;
+    Nodo *n=new Nodo("size",(yyvsp[0].TXT),"");
+    (yyval.NODO)=n;
 }
 #line 1826 "parser.cpp"
     break;
 
-  case 42: /* SUB: Pass Igual CPASS  */
-#line 256 "ASintactico.y"
+  case 47: /* SUB: Type Igual CTYPE  */
+#line 232 "ASintactico.y"
                  {
-
+    //cout<<"type"<<" S"<<endl;
+    Nodo *n=new Nodo("type",(yyvsp[0].NODO)->Token,"");
+    (yyval.NODO)=n;
 }
-#line 1834 "parser.cpp"
+#line 1836 "parser.cpp"
     break;
 
-  case 43: /* SUB: Path Igual CPATH  */
-#line 259 "ASintactico.y"
-                 {
-
-}
+  case 48: /* SUB: Ugo Igual Entero  */
+#line 237 "ASintactico.y"
+                 {}
 #line 1842 "parser.cpp"
     break;
 
-  case 44: /* SUB: R  */
-#line 262 "ASintactico.y"
-  {
-
+  case 49: /* SUB: Unit Igual CUNIT  */
+#line 238 "ASintactico.y"
+                 {
+    //cout<<"unit"<<" S"<<endl;
+    Nodo *n=new Nodo("unit",(yyvsp[0].NODO)->Token,"");
+    (yyval.NODO)=n;
 }
-#line 1850 "parser.cpp"
+#line 1852 "parser.cpp"
     break;
 
-  case 45: /* SUB: Size Igual Entero  */
-#line 265 "ASintactico.y"
-                  {
-
-}
+  case 50: /* SUB: User Igual CUSER  */
+#line 243 "ASintactico.y"
+                 {}
 #line 1858 "parser.cpp"
     break;
 
-  case 46: /* SUB: Type Igual CTYPE  */
-#line 268 "ASintactico.y"
-                 {
-
-}
-#line 1866 "parser.cpp"
+  case 51: /* CFIT: Bf  */
+#line 246 "ASintactico.y"
+       {Nodo *n=new Nodo((yyvsp[0].TXT)); (yyval.NODO)=n;}
+#line 1864 "parser.cpp"
     break;
 
-  case 47: /* SUB: Ugo Igual Entero  */
-#line 271 "ASintactico.y"
-                 {
-
-}
-#line 1874 "parser.cpp"
+  case 52: /* CFIT: Ff  */
+#line 247 "ASintactico.y"
+   {Nodo *n=new Nodo((yyvsp[0].TXT)); (yyval.NODO)=n;}
+#line 1870 "parser.cpp"
     break;
 
-  case 48: /* SUB: Unit Igual CUNIT  */
-#line 274 "ASintactico.y"
-                 {
+  case 53: /* CFIT: Wf  */
+#line 248 "ASintactico.y"
+   {Nodo *n=new Nodo((yyvsp[0].TXT)); (yyval.NODO)=n;}
+#line 1876 "parser.cpp"
+    break;
 
-}
+  case 54: /* CUNIT: Byte  */
+#line 251 "ASintactico.y"
+          {Nodo *n=new Nodo((yyvsp[0].TXT)); (yyval.NODO)=n;}
 #line 1882 "parser.cpp"
     break;
 
-  case 49: /* SUB: User Igual CUSER  */
-#line 277 "ASintactico.y"
-                 {
-
-}
-#line 1890 "parser.cpp"
+  case 55: /* CUNIT: Kilo  */
+#line 252 "ASintactico.y"
+     {Nodo *n=new Nodo((yyvsp[0].TXT)); (yyval.NODO)=n;}
+#line 1888 "parser.cpp"
     break;
 
-  case 50: /* CPATH: PathES  */
-#line 282 "ASintactico.y"
-            {
-
-}
-#line 1898 "parser.cpp"
+  case 56: /* CUNIT: Mega  */
+#line 253 "ASintactico.y"
+     {Nodo *n=new Nodo((yyvsp[0].TXT)); (yyval.NODO)=n;}
+#line 1894 "parser.cpp"
     break;
 
-  case 51: /* CPATH: PathS  */
-#line 285 "ASintactico.y"
-      {
+  case 57: /* CTYPE: Extendida  */
+#line 256 "ASintactico.y"
+               {Nodo *n=new Nodo((yyvsp[0].TXT)); (yyval.NODO)=n;}
+#line 1900 "parser.cpp"
+    break;
 
-}
+  case 58: /* CTYPE: Logica  */
+#line 257 "ASintactico.y"
+       {Nodo *n=new Nodo((yyvsp[0].TXT)); (yyval.NODO)=n;}
 #line 1906 "parser.cpp"
     break;
 
-  case 52: /* CFIT: Bf  */
-#line 290 "ASintactico.y"
-       {
-
-}
-#line 1914 "parser.cpp"
+  case 59: /* CTYPE: Primaria  */
+#line 258 "ASintactico.y"
+         {Nodo *n=new Nodo((yyvsp[0].TXT)); (yyval.NODO)=n;}
+#line 1912 "parser.cpp"
     break;
 
-  case 53: /* CFIT: Ff  */
-#line 293 "ASintactico.y"
-   {
-
-}
-#line 1922 "parser.cpp"
+  case 60: /* CFS: Tfs  */
+#line 261 "ASintactico.y"
+       {}
+#line 1918 "parser.cpp"
     break;
 
-  case 54: /* CFIT: Wf  */
-#line 296 "ASintactico.y"
-   {
+  case 61: /* CFS: Dfs  */
+#line 262 "ASintactico.y"
+    {}
+#line 1924 "parser.cpp"
+    break;
 
-}
+  case 62: /* CUSER: Palabra  */
+#line 265 "ASintactico.y"
+             {}
 #line 1930 "parser.cpp"
     break;
 
-  case 55: /* CUNIT: Byte  */
-#line 301 "ASintactico.y"
-          {
-
-}
-#line 1938 "parser.cpp"
+  case 63: /* CUSER: PalabraC  */
+#line 266 "ASintactico.y"
+         {}
+#line 1936 "parser.cpp"
     break;
 
-  case 56: /* CUNIT: Kilo  */
-#line 304 "ASintactico.y"
-     {
-
-}
-#line 1946 "parser.cpp"
+  case 64: /* CPASS: Ids  */
+#line 269 "ASintactico.y"
+         {}
+#line 1942 "parser.cpp"
     break;
 
-  case 57: /* CUNIT: Mega  */
-#line 307 "ASintactico.y"
-     {
+  case 65: /* CPASS: PalabraC  */
+#line 270 "ASintactico.y"
+         {}
+#line 1948 "parser.cpp"
+    break;
 
-}
+  case 66: /* CPASS: Palabra  */
+#line 271 "ASintactico.y"
+        {}
 #line 1954 "parser.cpp"
     break;
 
-  case 58: /* CTYPE: Extendida  */
-#line 312 "ASintactico.y"
-               {
 
-}
-#line 1962 "parser.cpp"
-    break;
-
-  case 59: /* CTYPE: Logica  */
-#line 315 "ASintactico.y"
-       {
-
-}
-#line 1970 "parser.cpp"
-    break;
-
-  case 60: /* CTYPE: Primaria  */
-#line 318 "ASintactico.y"
-         {
-
-}
-#line 1978 "parser.cpp"
-    break;
-
-  case 61: /* CFS: Tfs  */
-#line 323 "ASintactico.y"
-       {
-
-}
-#line 1986 "parser.cpp"
-    break;
-
-  case 62: /* CFS: Dfs  */
-#line 326 "ASintactico.y"
-    {
-
-}
-#line 1994 "parser.cpp"
-    break;
-
-  case 63: /* CUSER: Palabra  */
-#line 331 "ASintactico.y"
-             {
-
-}
-#line 2002 "parser.cpp"
-    break;
-
-  case 64: /* CUSER: PalabraC  */
-#line 334 "ASintactico.y"
-         {
-
-}
-#line 2010 "parser.cpp"
-    break;
-
-  case 65: /* CPASS: Ids  */
-#line 339 "ASintactico.y"
-         {
-
-}
-#line 2018 "parser.cpp"
-    break;
-
-  case 66: /* CPASS: PalabraC  */
-#line 342 "ASintactico.y"
-         {
-
-}
-#line 2026 "parser.cpp"
-    break;
-
-  case 67: /* CPASS: Palabra  */
-#line 345 "ASintactico.y"
-        {
-
-}
-#line 2034 "parser.cpp"
-    break;
-
-
-#line 2038 "parser.cpp"
+#line 1958 "parser.cpp"
 
       default: break;
     }
@@ -2258,3 +2178,6 @@ yyreturnlab:
   return yyresult;
 }
 
+#line 273 "ASintactico.y"
+
+//SINTACICOS

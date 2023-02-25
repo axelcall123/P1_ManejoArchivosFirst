@@ -4,15 +4,16 @@
 #include <vector>
 #include <stdio.h>
 #include <stdlib.h>
-
+using namespace std;
 class Nodo
 {
 public:
-    Nodo(const std::string& nombre, const std::string& token, const std::string& tipo);
-    std::string Nombre;
-    std::string Token;
-    std::string Tipo;
-    std::vector<Nodo*> Hojas;
+    Nodo(const string &token);
+    Nodo(const string& nombre, const string& token, const string& tipo);
+    string Nombre;
+    string Token;
+    string Tipo;
+    vector<Nodo*> Hojas;
     void addHijo(Nodo* hoja);
 };
 

@@ -64,46 +64,46 @@ extern int yydebug;
     Delete = 265,                  /* Delete  */
     Destino = 266,                 /* Destino  */
     Edit = 267,                    /* Edit  */
-    Fdisk = 268,                   /* Fdisk  */
-    FileN = 269,                   /* FileN  */
-    Find = 270,                    /* Find  */
-    Fit = 271,                     /* Fit  */
-    Fs = 272,                      /* Fs  */
-    Full = 273,                    /* Full  */
-    Grp = 274,                     /* Grp  */
-    Id = 275,                      /* Id  */
-    Login = 276,                   /* Login  */
-    Logout = 277,                  /* Logout  */
-    Mkdir = 278,                   /* Mkdir  */
-    Mkdisk = 279,                  /* Mkdisk  */
-    Mkfile = 280,                  /* Mkfile  */
-    Mkfs = 281,                    /* Mkfs  */
-    Mkusr = 282,                   /* Mkusr  */
-    Mount = 283,                   /* Mount  */
-    Move = 284,                    /* Move  */
-    Name = 285,                    /* Name  */
-    Pass = 286,                    /* Pass  */
-    Path = 287,                    /* Path  */
-    Pause = 288,                   /* Pause  */
-    R = 289,                       /* R  */
-    Remove = 290,                  /* Remove  */
-    Rename = 291,                  /* Rename  */
-    Rmdisk = 292,                  /* Rmdisk  */
-    Rmgrp = 293,                   /* Rmgrp  */
-    Rmusr = 294,                   /* Rmusr  */
-    Size = 295,                    /* Size  */
-    Type = 296,                    /* Type  */
-    Ugo = 297,                     /* Ugo  */
-    Unit = 298,                    /* Unit  */
-    Unmount = 299,                 /* Unmount  */
-    User = 300,                    /* User  */
-    Dfs = 301,                     /* Dfs  */
-    Tfs = 302,                     /* Tfs  */
-    Igual = 303,                   /* Igual  */
-    Mayor = 304,                   /* Mayor  */
-    Interrogacion = 305,           /* Interrogacion  */
-    Asterisco = 306,               /* Asterisco  */
-    PathES = 307,                  /* PathES  */
+    Execute = 268,                 /* Execute  */
+    Fdisk = 269,                   /* Fdisk  */
+    FileN = 270,                   /* FileN  */
+    Find = 271,                    /* Find  */
+    Fit = 272,                     /* Fit  */
+    Fs = 273,                      /* Fs  */
+    Full = 274,                    /* Full  */
+    Grp = 275,                     /* Grp  */
+    Id = 276,                      /* Id  */
+    Login = 277,                   /* Login  */
+    Logout = 278,                  /* Logout  */
+    Mkdir = 279,                   /* Mkdir  */
+    Mkdisk = 280,                  /* Mkdisk  */
+    Mkfile = 281,                  /* Mkfile  */
+    Mkfs = 282,                    /* Mkfs  */
+    Mkusr = 283,                   /* Mkusr  */
+    Mount = 284,                   /* Mount  */
+    Move = 285,                    /* Move  */
+    Name = 286,                    /* Name  */
+    Pass = 287,                    /* Pass  */
+    Path = 288,                    /* Path  */
+    Pause = 289,                   /* Pause  */
+    R = 290,                       /* R  */
+    Remove = 291,                  /* Remove  */
+    Rename = 292,                  /* Rename  */
+    Rmdisk = 293,                  /* Rmdisk  */
+    Rmgrp = 294,                   /* Rmgrp  */
+    Rmusr = 295,                   /* Rmusr  */
+    Size = 296,                    /* Size  */
+    Type = 297,                    /* Type  */
+    Ugo = 298,                     /* Ugo  */
+    Unit = 299,                    /* Unit  */
+    Unmount = 300,                 /* Unmount  */
+    User = 301,                    /* User  */
+    Dfs = 302,                     /* Dfs  */
+    Tfs = 303,                     /* Tfs  */
+    Igual = 304,                   /* Igual  */
+    Mayor = 305,                   /* Mayor  */
+    Interrogacion = 306,           /* Interrogacion  */
+    Asterisco = 307,               /* Asterisco  */
     PathS = 308,                   /* PathS  */
     Entero = 309,                  /* Entero  */
     Palabra = 310,                 /* Palabra  */
@@ -118,7 +118,8 @@ extern int yydebug;
     Logica = 319,                  /* Logica  */
     Mega = 320,                    /* Mega  */
     Primaria = 321,                /* Primaria  */
-    Wf = 322                       /* Wf  */
+    Wf = 322,                      /* Wf  */
+    TheEnd = 323                   /* TheEnd  */
   };
   typedef enum yytokentype yytoken_kind_t;
 #endif
@@ -132,7 +133,7 @@ union YYSTYPE
     char TXT[300];
     struct Nodo* NODO;
 
-#line 136 "parser.h"
+#line 137 "parser.h"
 
 };
 typedef union YYSTYPE YYSTYPE;

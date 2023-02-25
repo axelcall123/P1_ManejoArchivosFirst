@@ -1,6 +1,7 @@
 #include <iostream>
 #include <vector>
 using namespace std;
+#include "cpp/nodo.cpp"
 typedef struct
 {
 	int a = 0;
@@ -42,6 +43,11 @@ int main()
 	tm *getTime = gmtime(&ahora);
 	dateTime = asctime(getTime);
 	cout<<"tiempo: "<<dateTime<<endl;
+
+	//nodo
+	Nodo non=Nodo("a");;
+	Nodo *nan=new Nodo("b");
+	cout<<nan->Token<<" XD"<<endl;
 
 	return 0;
 }
