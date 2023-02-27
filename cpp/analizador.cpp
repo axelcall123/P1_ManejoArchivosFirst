@@ -58,7 +58,8 @@ void Analizador::recorrer(Nodo *raiz)
 			break;
 		}
 	}
-	// PRINCIPALCOM
+
+	// PRINCIPALCOM Nombre
 	else if (raiz->Nombre == "execute")
 	{
 		ejecutarComando(strLeerComado);
@@ -68,6 +69,11 @@ void Analizador::recorrer(Nodo *raiz)
 	{
 		ejecutarComando(strLeerComado);
 		strLeerComado = "mkdisk";
+	}
+	else if (raiz->Nombre == "rmkdis")
+	{
+		ejecutarComando(strLeerComado);
+		strLeerComado = "rmkdis";
 	}
 	else if (raiz->Nombre == "fdisk")
 	{
@@ -79,6 +85,7 @@ void Analizador::recorrer(Nodo *raiz)
 		ejecutarComando(strLeerComado);
 		strLeerComado = "rep";
 	}
+
 	// SUBCOMAND Token
 	else if (raiz->Nombre == "size")
 	{
@@ -95,17 +102,33 @@ void Analizador::recorrer(Nodo *raiz)
 		char *str = new char[raiz->Token.length() + 1];
 		strcpy(str, raiz->Token.c_str());
 		strucEjComando->unit = *str;
+		delete str;
+		str=nullptr;
 	}
 	else if (raiz->Nombre == "name")
 	{
 		strucEjComando->name = raiz->Token;
 	}
-	
+	else if (raiz->Nombre == "type")
+	{
+		char *str = new char[raiz->Token.length() + 1];
+		strcpy(str, raiz->Token.c_str());
+		strucEjComando->type=*str;
+		delete str;
+		str = nullptr;
+	}
+	else if (raiz->Nombre == "delete")
+	{
+		strucEjComando->delEte=raiz->Token;
+	}
+	else if (raiz->Nombre == "fit"){
+		strucEjComando->fit = raiz->Token;
+	}
 	// EXCEPCIONES
 	else if (raiz->Nombre == "thend")
-	{
-		ejecutarComando(strLeerComado);
-	}
+		{
+			ejecutarComando(strLeerComado);
+		}
 }
 void Analizador::ejecutarComando(string comando)
 {
@@ -119,33 +142,51 @@ void Analizador::ejecutarComando(string comando)
 				strcpy(str, strucEjComando->path.c_str());
 				strLeerComado=" ";
 				leerC(str);
+				delete str;
+				str=nullptr;
 			}
 		}
 		else if (comando == "mkdisk")
 		{
 			if (strucEjComando->path != " " && strucEjComando->size != 0) // obligatorio
 			{
+				
+				//comando default
 				string fit = "FF";
 				char unit = 'M';
+				bool error=false;
 				// asignar las opcionales si existe asigno
 				if (strucEjComando->fit != " ")
 				{
-					fit = strucEjComando->fit;
+					Extras<string> ext;
+					Retorno<string> rtn;
+					string m[3] = {"BF", "FF", "WF"};
+					rtn = ext.error(m, strucEjComando->fit, "fit");
+					if(rtn.tf)
+						fit=rtn.str;
 				}
 				if (strucEjComando->unit != ' ')
 				{
-					unit = strucEjComando->unit;
+					Extras<char> ext;
+					Retorno<char> rtn;
+					char m[3] = {'K', 'M'};
+					rtn = ext.error(m, strucEjComando->unit, "unit");
+					if (rtn.tf)
+						unit = rtn.str;
 				}
 				Archivo<MBR> arc;
 				// char
 				char *str = new char[strucEjComando->path.length() + 1];
 				strcpy(str, strucEjComando->path.c_str());		
-				arc.crear_archivo(str, strucEjComando->size, unit);
-				delete str;
-				// tamaño
+				int ver=arc.crear_archivo(str, strucEjComando->size, unit);
+				
+				// tamaño disco
 				struct stat st;
 				stat(str, &st);
+				delete str;
+				str = nullptr;
 				structMbr->mbr_tamano = st.st_size;
+				cout<<"tam 1:2>> "<<st.st_size<<" : "<<ver<<endl;
 				// tiempo
 				structMbr->mbr_fecha_creacion = time(0);
 				// random
@@ -155,24 +196,62 @@ void Analizador::ejecutarComando(string comando)
 				strcpy(str, fit.c_str());
 				structMbr->dsk_fit = *str;
 				delete str;
+				str=nullptr;
 				str = new char[strucEjComando->path.length() + 1];
 				strcpy(str, strucEjComando->path.c_str());
 				arc.escribir_archivo(str, *structMbr, 0);
 				//arc.leer_todo(str);
+				delete str;
+				str = nullptr;
+			}
+		}else if(comando=="rmdisk"){
+			if (strucEjComando->path!=" "){
+				char *str = new char[strucEjComando->path.length() + 1];
+				strcpy(str, strucEjComando->path.c_str());
+				remove(str);
+				delete str;
+				str = nullptr;
 			}
 		}
 		else if (comando == "fdisk")
 		{
 			if (strucEjComando->size != 0 && strucEjComando->path != " " && strucEjComando->name != " ") // obligatorio
 			{
-				char unit = 'K';
+				//default
+				char unit = 'k';
+				char type='p';
+				string fit="wf";
+				bool error;
 				if (strucEjComando->unit != ' ')
 				{
-					unit = strucEjComando->unit;
+					Extras<char> ext;
+					Retorno<char> rtn;
+					char m[3] = {'B','K','M'};
+					rtn = ext.error(m, strucEjComando->unit, "unit");
+					if (rtn.tf)
+						unit = rtn.str;
+				}
+				if (strucEjComando->type!=' ')
+				{
+					Extras<char> ext;
+					Retorno<char> rtn;
+					char m[3] = {'P', 'E','L'};
+					rtn = ext.error(m, strucEjComando->unit, "type");
+					if (rtn.tf)
+						type = rtn.str;
+				}
+				if (strucEjComando->fit != " ")//string ejcomando
+				{
+					Extras<string> ext;
+					Retorno<string> rtn;
+					string m[3] = {"BF", "FF", "WF"};
+					rtn = ext.error(m, strucEjComando->fit, "type");
+					if (rtn.tf)
+						fit = rtn.str;
 				}
 				//
 				Archivo<MBR> arc;
-				int tamParticion=arc.tamano_archivo(strucEjComando->size, strucEjComando->unit);
+				int tamParticion=arc.tamano_archivo(strucEjComando->size, unit)*1024;
 				//get nombre
 				
 				char strA[16];
@@ -189,10 +268,13 @@ void Analizador::ejecutarComando(string comando)
 					strcpy(str, strucEjComando->name.c_str());
 
 					nameParticion(structMbr->mbr_partition_1.part_name, str);
+					delete str;
+					str = nullptr;
 					char *str2 = new char[strucEjComando->path.length() + 1];
-					strcpy(str, strucEjComando->path.c_str());
-					arc.escribir_archivo(str, *structMbr, 0);
-					
+					strcpy(str2, strucEjComando->path.c_str());
+					arc.escribir_archivo(str2, *structMbr, 0);
+					delete str2;
+					str2 = nullptr;
 				}
 				else if (structMbr->mbr_partition_2.part_s ==0)
 				{
@@ -206,10 +288,13 @@ void Analizador::ejecutarComando(string comando)
 					strcpy(str, strucEjComando->name.c_str());
 
 					nameParticion(structMbr->mbr_partition_2.part_name, str);
-
+					delete str;
+					str = nullptr;
 					char *str2 = new char[strucEjComando->path.length() + 1];
-					strcpy(str, strucEjComando->path.c_str());
-					arc.escribir_archivo(str, *structMbr, 0);
+					strcpy(str2, strucEjComando->path.c_str());
+					arc.escribir_archivo(str2, *structMbr, 0);
+					delete str2;
+					str2 = nullptr;
 				}
 				else if (structMbr->mbr_partition_3.part_s ==0)
 				{
@@ -223,10 +308,13 @@ void Analizador::ejecutarComando(string comando)
 					strcpy(str, strucEjComando->name.c_str());
 
 					nameParticion(structMbr->mbr_partition_3.part_name, str);
-
+					delete str;
+					str = nullptr;
 					char *str2 = new char[strucEjComando->path.length() + 1];
-					strcpy(str, strucEjComando->path.c_str());
-					arc.escribir_archivo(str, *structMbr, 0);
+					strcpy(str2, strucEjComando->path.c_str());
+					arc.escribir_archivo(str2, *structMbr, 0);
+					delete str2;
+					str2 = nullptr;
 				}
 				else if (structMbr->mbr_partition_4.part_s ==0)
 				{
@@ -240,10 +328,13 @@ void Analizador::ejecutarComando(string comando)
 					strcpy(str, strucEjComando->name.c_str());
 
 					nameParticion(structMbr->mbr_partition_4.part_name, str);
-
+					delete str;
+					str = nullptr;
 					char *str2 = new char[strucEjComando->path.length() + 1];
-					strcpy(str, strucEjComando->path.c_str());
-					arc.escribir_archivo(str, *structMbr, 0);
+					strcpy(str2, strucEjComando->path.c_str());
+					delete str2;
+					str2 = nullptr;
+					arc.escribir_archivo(str2, *structMbr, 0);
 					Leer reaD;
 					reaD.leerD(structMbr);
 				}
@@ -262,5 +353,6 @@ void Analizador::nameParticion(char *strU[], char strD[])
 void Analizador::vaciarComando()
 {
 	delete strucEjComando;
+	strucEjComando=nullptr;
 	strucEjComando = new structComandos;
 }

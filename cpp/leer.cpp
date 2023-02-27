@@ -2,7 +2,7 @@
 
 void Leer::leerU(Partition estr){
     cout << "PARTITION:";
-    cout << *estr.part_name<<estr.part_s <<"|";
+    cout << *estr.part_name<<" "<<estr.part_s <<"|";
 };
 void Leer::leerD(MBR *estr)
 {
@@ -12,6 +12,10 @@ void Leer::leerD(MBR *estr)
     dateTime = asctime(getTime);
 
     cout << estr->mbr_dsk_signature <<" "<< dateTime << "|";
+    delete dateTime;//puede sobre escribir cont
+    delete getTime;
+    dateTime=nullptr;//puedo apuntar donde quiera
+    getTime=nullptr;
     leerU(estr->mbr_partition_1);
     leerU(estr->mbr_partition_2);
     leerU(estr->mbr_partition_3);

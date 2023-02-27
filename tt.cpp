@@ -2,6 +2,7 @@
 #include <vector>
 using namespace std;
 #include "cpp/nodo.cpp"
+#include <string.h>
 typedef struct
 {
 	int a = 0;
@@ -10,6 +11,12 @@ typedef struct
 {
 	vector<uno> b{};
 } dos;
+char *charStr(string st){
+	char *str2 = new char[st.length() + 1];
+	strcpy(str2, st.c_str());
+	cout<<str2<<" "<<&str2<<" "<<*str2<<" "<<endl;
+	return str2;
+}
 
 int main()
 {
@@ -48,6 +55,6 @@ int main()
 	Nodo non=Nodo("a");;
 	Nodo *nan=new Nodo("b");
 	cout<<nan->Token<<" XD"<<endl;
-
+	
 	return 0;
 }

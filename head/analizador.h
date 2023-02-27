@@ -14,6 +14,7 @@ using namespace std;
 #include "../flexbison/parser.cpp"
 #include "../cpp/leer.cpp"
 #include "struct.h"
+#include "../cpp/extras.cpp"
 
 
 class Analizador
@@ -29,6 +30,7 @@ public:
     void recorrer(Nodo *raiz);
     void ejecutarComando(string comando);
     void vaciarComando();
+    string charString(char *str);
 private:
     void nameParticion(char *strU[],char strD[]);
 };

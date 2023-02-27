@@ -24,6 +24,8 @@ int main(int argc, char *argv[])
 				putc(str[i], in);
 			}
 		}
+		delete str;
+		str=nullptr;
 		Analizador analizador;
 		fclose(in);
 		analizador.leerC("Inicial.txt");

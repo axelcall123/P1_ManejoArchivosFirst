@@ -1,5 +1,5 @@
 #include "../head/archivo.h"
-
+// https://youtu.be/yrDIuzNCEEI
 template <class T>
 int Archivo<T>::tamano_archivo(int tamano, char dim)
 {
@@ -22,7 +22,7 @@ int Archivo<T>::tamano_archivo(int tamano, char dim)
 }
 
 template <class T>
-void Archivo<T>::crear_archivo(char *path, int tamano, char dim)
+int Archivo<T>::crear_archivo(char *path, int tamano, char dim)
 {
     // tamaño del archivo
     int tamFile = tamano_archivo(tamano, dim);
@@ -42,6 +42,9 @@ void Archivo<T>::crear_archivo(char *path, int tamano, char dim)
         limite++;
     }
     fclose(archivoBinario);
+    delete archivoBinario;
+    archivoBinario=nullptr;
+    return tamFile*1024;
 }
 
 template <class T>
