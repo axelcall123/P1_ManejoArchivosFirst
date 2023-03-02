@@ -43,7 +43,14 @@ int main()
 		jug.b.resize(2); // 4 uno
 	}
 	cb.clear();
-
+	
+	vector<char> aa(0);
+	aa.push_back('a');
+	aa.push_back('b');
+	aa.push_back('c');
+	aa.pop_back();
+	aa.pop_back();
+	aa.pop_back();
 	// tiempo
 	time_t ahora = time(0);
 	char *dateTime = ctime(&ahora);

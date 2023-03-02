@@ -36,6 +36,7 @@ typedef struct
     Partition mbr_partition_3;//p3
     Partition mbr_partition_4;//p4
 } MBR;
+
 typedef struct{
     char part_status;
     char part_fit;
@@ -44,6 +45,7 @@ typedef struct{
     int part_next;
     char part_name[16];
 }EBR;
+
 typedef struct{
     int inicioF=0;//inico free space
     int tamnoD=0;//tamño bytes del disco
@@ -56,4 +58,10 @@ struct Retorno
     T str = " ";
     bool tf = false;
 };
+
+typedef struct{
+    int inicio=0;
+    int tamano=0;
+    char tipo=' ';
+}Vacio;
 #endif // STRUCT_H

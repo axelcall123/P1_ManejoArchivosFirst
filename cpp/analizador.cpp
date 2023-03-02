@@ -1,4 +1,16 @@
 #include "../head/analizador.h"
+/*ESTRUCUTAS:
+	m:MBR
+	p:paticion
+
+		JERARAQUIA:
+			m
+			p
+			--
+
+	i=inicio f=final
+	/i[estructura]f\
+*/
 void Analizador::leerC(char *paths)
 {
 	FILE *in;
@@ -217,6 +229,7 @@ void Analizador::ejecutarComando(string comando)
 		{
 			if (strucEjComando->size != 0 && strucEjComando->path != " " && strucEjComando->name != " ") // obligatorio
 			{
+
 				//default
 				char unit = 'k';
 				char type='p';
@@ -251,70 +264,48 @@ void Analizador::ejecutarComando(string comando)
 				}
 				//
 				Archivo<MBR> arc;
-				int tamParticion=arc.tamano_archivo(strucEjComando->size, unit)*1024;
 				//get nombre
 				
 				char strA[16];
-				// uno a uno particion
+				// FIXME: leer de nuevo todo
+				
 				if (structMbr->mbr_partition_1.part_s ==0)
 				{
-					structMbr->mbr_partition_1.part_start='F';
-					structMbr->mbr_partition_1.part_type='P';
-					structMbr->mbr_partition_1.part_fit='W';
-					structMbr->mbr_partition_1.part_start = 0;
-					structMbr->mbr_partition_1.part_s = tamParticion; // FIXME:arreglar esto
+					//leer obtener strucMBR
+					MBR strucA;
+					char *str = new char[strucEjComando->path.length()+1];
+					strcpy(str, fit.c_str());
+					delete structMbr;//reutilzar la info
+						structMbr = &arc.leer_struct(str, strucA, 0);
+					delete str;
+					str = nullptr;
 
-					char *str = new char[16];
+					str = new char[2];
+					strcpy(str, fit.c_str());
+					//status
+					structMbr->mbr_partition_1.part_status='F';
+					//type
+					structMbr->mbr_partition_1.part_type=type;
+					//fit
+					structMbr->mbr_partition_1.part_fit=str[0];
+					delete str;
+					str = nullptr;
+					//start
+					structMbr->mbr_partition_1.part_start = 0;//FIXME: arreglar donde comienza
+					//s
+					structMbr->mbr_partition_1.part_s = arc.tamano_archivo(strucEjComando->size, unit) * 1024;
+					//name
+					str = new char[16];
 					strcpy(str, strucEjComando->name.c_str());
-
 					nameParticion(structMbr->mbr_partition_1.part_name, str);
 					delete str;
 					str = nullptr;
-					char *str2 = new char[strucEjComando->path.length() + 1];
-					strcpy(str2, strucEjComando->path.c_str());
-					arc.escribir_archivo(str2, *structMbr, 0);
-					delete str2;
-					str2 = nullptr;
-				}
-				else if (structMbr->mbr_partition_2.part_s ==0)
-				{
-					structMbr->mbr_partition_2.part_start = 'F';
-					structMbr->mbr_partition_2.part_type = 'P';
-					structMbr->mbr_partition_2.part_fit = 'W';
-					structMbr->mbr_partition_2.part_start = 0;
-					structMbr->mbr_partition_2.part_s = tamParticion; // FIXME:arreglar esto
-
-					char *str = new char[16];
-					strcpy(str, strucEjComando->name.c_str());
-
-					nameParticion(structMbr->mbr_partition_2.part_name, str);
+					//escribir en binario
+					str = new char[strucEjComando->path.length() + 1];
+					strcpy(str, strucEjComando->path.c_str());
+					arc.escribir_archivo(str, *structMbr, 0);
 					delete str;
 					str = nullptr;
-					char *str2 = new char[strucEjComando->path.length() + 1];
-					strcpy(str2, strucEjComando->path.c_str());
-					arc.escribir_archivo(str2, *structMbr, 0);
-					delete str2;
-					str2 = nullptr;
-				}
-				else if (structMbr->mbr_partition_3.part_s ==0)
-				{
-					structMbr->mbr_partition_3.part_start = 'F';
-					structMbr->mbr_partition_3.part_type = 'P';
-					structMbr->mbr_partition_3.part_fit = 'W';
-					structMbr->mbr_partition_3.part_start = 0;
-					structMbr->mbr_partition_3.part_s = tamParticion; // FIXME:arreglar esto
-
-					char *str = new char[16];
-					strcpy(str, strucEjComando->name.c_str());
-
-					nameParticion(structMbr->mbr_partition_3.part_name, str);
-					delete str;
-					str = nullptr;
-					char *str2 = new char[strucEjComando->path.length() + 1];
-					strcpy(str2, strucEjComando->path.c_str());
-					arc.escribir_archivo(str2, *structMbr, 0);
-					delete str2;
-					str2 = nullptr;
 				}
 				else if (structMbr->mbr_partition_4.part_s ==0)
 				{
